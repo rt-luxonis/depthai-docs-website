@@ -20,7 +20,9 @@ order: 2
 * Excellent Low-light
 * Same dimensions, mounting holes, and camera center as Raspberry Pi Camera v2.1
 * 1280 x 720 pixels
-* 83 DFOV°
+* 83.76° Diagonal Field of View (DFoV)
+* 71.86° Horizontal Field of View (HFoV)
+* 56.74° Vertical Field of View (VFoV)
 * Lens Size: 1/2.3 inch
 * AutoFocus: 19.6 cm - ∞
 * F-number: 2.2
