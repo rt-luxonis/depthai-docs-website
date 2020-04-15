@@ -23,9 +23,9 @@ Under-the-hood, DepthAI uses the Intel MyriadX chip to perform high-speed model 
 
 The [Open Model Zoo](https://github.com/opencv/open_model_zoo) is a library of freely-available pre-trained models.  Side note: in machine learning/AI the name for a collection of pre-trained models is called a 'model zoo'. The Zoo also contains scripts for downloading those models into a compile-ready format to run on DepthAI.
 
-DepthAI is able to run many of the object detection models in the Zoo, and several are pre-included in the DepthAI Github.   repository.  We will be using one such model in this tutorial, is face-detection-retail-0004 (pre-compiled [here](https://github.com/luxonis/depthai-python-extras/blob/master/resources/nn/object_detection_4shave/face-detection-retail-0004.blob) on our Github, and [here](https://docs.openvinotoolkit.org/2020.1/_models_intel_face_detection_retail_0004_description_face_detection_retail_0004.html).
+DepthAI is able to run many of the object detection models in the Zoo, and several are pre-included in the DepthAI Github.   repository.  We will be using one such model in this tutorial: the face-detection-retail-0004 (pre-compiled [here](https://github.com/luxonis/depthai-python-extras/blob/master/resources/nn/object_detection_4shave/face-detection-retail-0004.blob) on our Github, and [here](https://docs.openvinotoolkit.org/2020.1/_models_intel_face_detection_retail_0004_description_face_detection_retail_0004.html)).
 
-We'll cover converting OpenVINO models to run on DepthAI in a later article.  For now, you can find the models we've pre-converted [here](https://github.com/luxonis/depthai-python-extras/tree/master/resources/nn) and brief instructions on how to do so [here](https://github.com/luxonis/depthai-python-extras#conversion-of-existing-trained-models-into-intel-movidius-binary-format)
+We'll cover converting OpenVINO models to run on DepthAI in a later article.  For now, you can find the models we've pre-converted [here](https://github.com/luxonis/depthai-python-extras/tree/master/resources/nn) and brief instructions on how to do so [here](https://github.com/luxonis/depthai-python-extras#conversion-of-existing-trained-models-into-intel-movidius-binary-format).
 
 ## Dependencies
 
@@ -38,13 +38,13 @@ error
   <span class="small">All dependencies are installed and the repository is checked out to `~/Desktop/depthai-python-extras`.</span>
 </div>
 
-### Run face-detection-retail-04 model
+### Run the `face-detection-retail-04` model
 
 The depthai.py file can be modified directly to you do your bidding, or you can simply pass arguments to it for which models you want to run.  
 
 For simplicity we will do the latter, simply passing arguments so that DepthAI runs the `face-detection-retail-04` instead of the model run by default which is specified in `depthai-python-extras/consts/resource_paths.py` [here](https://github.com/luxonis/depthai-python-extras/blob/master/consts/resource_paths.py).
 
-Before switching to using the `face-detection-retail` let's take a baby step and give these command line options a spin.  In this case we'll just pass in the same neural network that default runs when running `python3 test.py`, just to make sure we're doign it right:
+Before switching to using the `face-detection-retail` let's take a baby step and give these command line options a spin.  In this case we'll just pass in the same neural network that default runs when running `python3 test.py`, just to make sure we're doing it right:
 
 ```
 python3 test.py -co '{"ai":{
@@ -52,7 +52,7 @@ python3 test.py -co '{"ai":{
 "blob_file_config": "resources/nn/object_detection_4shave/object_detection.json",
 "calc_dist_to_bb":false }}'
 ```
-This will then run the a typical demo MobileNetv1 SSD object detector trained on the [PASCAL 2007 VOC](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) classes, which are:
+This will then run a typical demo MobileNetv1 SSD object detector trained on the [PASCAL 2007 VOC](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) classes, which are:
 * Person: person
 * Animal: bird, cat, cow, dog, horse, sheep
 * Vehicle: aeroplane, bicycle, boat, bus, car, motorbike, train
